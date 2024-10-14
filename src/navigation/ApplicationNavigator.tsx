@@ -2,9 +2,9 @@ import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
-import MainTabNavigator from './MainTabNavigator/MainTabNavigator';
+import MainTabNavigator from './TabNavigator/MainTabNavigator';
 import {RootNavigationType} from './types';
-import MainStackNavigator from './MainStackNavigator/MainStackNavigator';
+import {NotificationNavigator, ProfileNavigator} from './StackNavigator';
 
 const ApplicationNavigator = () => {
   const Root = createNativeStackNavigator<RootNavigationType>();
@@ -17,7 +17,8 @@ const ApplicationNavigator = () => {
           headerShown: false,
         }}>
         <Root.Screen name="MainTabNavigator" component={MainTabNavigator} />
-        <Root.Screen name="MainStackNavigator" component={MainStackNavigator} />
+        {NotificationNavigator()}
+        {ProfileNavigator()}
       </Root.Navigator>
     </NavigationContainer>
   );

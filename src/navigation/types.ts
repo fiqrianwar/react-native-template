@@ -2,10 +2,8 @@ import {BottomTabNavigationProp} from '@react-navigation/bottom-tabs';
 import {NavigatorScreenParams} from '@react-navigation/native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 
-export type StackNavigationProps = NativeStackNavigationProp<
-  RootNavigationType,
-  'MainStackNavigator'
->;
+export type StackNavigationProps =
+  NativeStackNavigationProp<StackNavigationType>;
 
 export type TabNavigationProps = BottomTabNavigationProp<
   RootNavigationType,
@@ -14,7 +12,6 @@ export type TabNavigationProps = BottomTabNavigationProp<
 
 export type RootNavigationType = {
   MainTabNavigator: NavigatorScreenParams<TabNavigationType>;
-  MainStackNavigator: NavigatorScreenParams<StackNavigationType>;
 };
 
 export type TabNavigationType = {
@@ -24,4 +21,5 @@ export type TabNavigationType = {
 
 export type StackNavigationType = {
   ProfileScreen: undefined;
+  NotificationScreen: undefined;
 };

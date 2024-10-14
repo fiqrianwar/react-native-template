@@ -11,11 +11,7 @@ const Home = () => {
     <View style={styles.container}>
       <Button
         title="Direct To Profile"
-        onPress={() =>
-          navigation.navigate('MainStackNavigator', {
-            screen: 'ProfileScreen',
-          })
-        }
+        onPress={() => navigation.navigate('ProfileScreen')}
       />
     </View>
   );
