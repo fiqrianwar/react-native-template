@@ -13,7 +13,7 @@ const Home = () => {
   const dispatch = useDispatch();
   const count = useSelector((state: RootState) => state.counter.value);
 
-  const {data} = useGetPokemonByNameQuery('');
+  const {data} = useGetPokemonByNameQuery();
 
   return (
     <View style={styles.container}>
@@ -23,12 +23,7 @@ const Home = () => {
         title="Direct To Profile"
         onPress={() => navigation.navigate('ProfileScreen')}
       />
-      <Text
-        style={{
-          textAlign: 'center',
-        }}>
-        {count}
-      </Text>
+      <Text style={styles.textCount}>{count}</Text>
       <View>
         {data?.results.map((item, i) => (
           <Text key={i}>{item.name}</Text>
